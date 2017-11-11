@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EIMSDB1AModel1" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EIMSDB1AEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="users_master_1A" EntityType="EIMSDB1AModel1.users_master_1A" />
+  </EntityContainer>
+  <EntityType Name="users_master_1A">
+    <Key>
+      <PropertyRef Name="UserCode" />
+    </Key>
+    <Property Name="UserCode" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="password" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="application_user" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="application_user_type" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="employee_id" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="user_appl" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Commitee" Type="Int32" />
+    <Property Name="UserDesc" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Cyear" Type="DateTime" Precision="3" />
+    <Property Name="Dept" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TelePhone" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+  </EntityType>
+</Schema>

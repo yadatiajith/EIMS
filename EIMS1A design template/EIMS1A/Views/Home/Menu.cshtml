@@ -1,0 +1,404 @@
+﻿@model EIMS1A.Models.Login
+
+@{
+    ViewBag.Title = "Menu";
+}
+<header>
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/wow.js"></script>
+    <script src="~/js/custom.js"></script>
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+  </header>
+<body>
+    <div class="container">
+	<div class="row">
+		<h2>Show Dropdown Hover & Caret Up</h2>
+        <nav class="navbar navbar-default" role="navigation">
+  
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  
+</nav>
+
+	</div>
+</div>
+    </body>
+        
+
+@*        ul#menu {
+   font-size: 1.3em;
+   font-weight: 600;
+   margin: 0 0 5px;
+   padding: 0;
+   text-align: left;
+ }
+
+ ul#menu li {
+     float: left;
+    list-style: none;
+    padding-left: 15px;
+ }
+
+
+    ul#menu li a {
+        background: none;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    ul#menu li a:hover {
+        color: #fff;
+        text-decoration: none;
+        display : block;
+        text-decoration:none;
+    }
+
+ ul#submenu { display: none; }
+ ul#submenu li { float: none; display: none; }
+ #submenu ul { display: none; }
+#submenu li:hover ul#submenu1 { display: block; }
+ ul#menu li:hover ul#submenu
+ {
+    display: block;
+    position: relative;
+    padding-top: 5px;
+ }
+
+      /*ul#menu li ul li:hover ul#submenu1
+      {
+    display: block;
+    position: absolute;
+    padding-top: 5px;
+      }*/
+
+ 
+
+        ul#menu li:hover ul#submenu li {
+            display: block;
+           
+        }
+
+        #submenu li :hover #menu {
+            background-color:green;
+        }
+
+
+        body{
+	 background:#202020;
+	 font:bold 12px Arial, Helvetica, sans-serif;
+	 margin:0;
+	 padding:0;
+	 min-width:960px;
+	 color:#bbbbbb; 
+}
+
+a { 
+	text-decoration:none; 
+	color:#00c6ff;
+}
+
+h1 {
+	font: 4em normal Arial, Helvetica, sans-serif;
+	padding: 20px;	margin: 0;
+	text-align:center;
+}
+
+h1 small{
+	font: 0.2em normal  Arial, Helvetica, sans-serif;
+	text-transform:uppercase; letter-spacing: 0.2em; line-height: 5em;
+	display: block;
+}
+
+h2 {
+    color:#bbb;
+    font-size:3em;
+	text-align:center;
+	text-shadow:0 1px 3px #161616;
+}
+
+.container {width: 960px; margin: 0 auto; overflow: hidden;}
+
+#content {	float: left; width: 100%;}
+
+.post { margin: 0 auto; padding-bottom: 50px; float: left; width: 960px; }
+
+.btn-sign {
+	width:460px;
+	margin-bottom:20px;
+	margin:0 auto;
+	padding:20px;
+	border-radius:5px;
+	background: -moz-linear-gradient(center top, #00c6ff, #018eb6);
+    background: -webkit-gradient(linear, left top, left bottom, from(#00c6ff), to(#018eb6));
+	background:  -o-linear-gradient(top, #00c6ff, #018eb6);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#00c6ff', EndColorStr='#018eb6');
+	text-align:center;
+	font-size:36px;
+	color:#fff;
+	text-transform:uppercase;
+}
+
+.btn-sign a { color:#fff; text-shadow:0 1px 2px #161616; }
+
+#mask {
+	display: none;
+	background: #000; 
+	position: fixed; left: 0; top: 0; 
+	z-index: 10;
+	width: 100%; height: 100%;
+	opacity: 0.8;
+	z-index: 999;
+}
+
+.login-popup{
+	display:none;
+	background: #333;
+	padding: 10px; 	
+	border: 2px solid #ddd;
+	float: left;
+	font-size: 1.2em;
+	position: fixed;
+	top: 50%; left: 50%;
+	z-index: 99999;
+	box-shadow: 0px 0px 20px #999;
+	-moz-box-shadow: 0px 0px 20px #999; /* Firefox */
+    -webkit-box-shadow: 0px 0px 20px #999; /* Safari, Chrome */
+	border-radius:3px 3px 3px 3px;
+    -moz-border-radius: 3px; /* Firefox */
+    -webkit-border-radius: 3px; /* Safari, Chrome */
+}
+
+img.btn_close {
+	float: right; 
+	margin: -28px -28px 0 0;
+}
+
+fieldset { 
+
+	border:none; 
+}
+
+form.signin .textbox label { 
+	display:block; 
+	padding-bottom:7px; 
+}
+
+form.signin .textbox span { 
+	display:block;
+}
+
+form.signin p, form.signin span { 
+	color:#999; 
+	font-size:11px; 
+	line-height:18px;
+} 
+
+form.signin .textbox input { 
+	background:#666666; 
+	border-bottom:1px solid #333;
+	border-left:1px solid #000;
+	border-right:1px solid #333;
+	border-top:1px solid #000;
+	color:#fff; 
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+	font:13px Arial, Helvetica, sans-serif;
+	padding:6px 6px 4px;
+	width:200px;
+}
+
+form.signin input:-moz-placeholder { color:#bbb; text-shadow:0 0 2px #000; }
+form.signin input::-webkit-input-placeholder { color:#bbb; text-shadow:0 0 2px #000;  }
+
+.button { 
+	background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
+	background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+	background:  -o-linear-gradient(top, #f3f3f3, #dddddd);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f3f3f3', EndColorStr='#dddddd');
+	border-color:#000; 
+	border-width:1px;
+	border-radius:4px 4px 4px 4px;
+	-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+	color:#333;
+	cursor:pointer;
+	display:inline-block;
+	padding:6px 6px 4px;
+	margin-top:10px;
+	font:12px; 
+	width:214px;
+}
+
+.button:hover { background:#ddd; }*@
+
+ @*</style>
+    <div>
+        <nav>
+            <ul id="menu">*@
+                @*<li>@Html.ActionLink("Employee Info", "Index", "Home")</li>*@
+                @*<li><a href="#">EmpInfo</a>*@
+                   @* <ul id="submenu" style="margin-left: -55px;" class="nested">
+                        <li>@Html.ActionLink("Employee Information", "#", "#")</li>
+                        <li>@Html.ActionLink("Employee Previous and Current Pay Details", "#", "#")</li>
+                        <li>@Html.ActionLink("Employee Modification", "#", "#")</li>*@
+                        @*<li>@Html.ActionLink("Employee Edit", "#", "#")*@
+                        @*<li><a href="#">Employee Edit</a>
+                            <ul id="submenu1">
+                                <li style="padding-left: 100px;">@Html.ActionLink("Employee Name", "#", "#")</li>
+                            </ul>
+                        </li>*@
+                        @*<li>@Html.ActionLink("Promotion Details Edit", "#", "#")</li>
+                        <li>@Html.ActionLink("Change Password", "#", "#")</li>
+                        <li>@Html.ActionLink("Sr.No Entry", "#", "#")</li>
+                        <li>@Html.ActionLink("Contarct Extend Deatils", "#", "#")</li>
+                        <li>@Html.ActionLink("Probation Period Report", "#", "#")</li>
+                    </ul>
+
+                </li>*@
+                @*<li><a href="#">EmpInfo</a>
+                    <ul id="submenu" style="margin-left: -55px;" class="nested">
+                        <li>@Html.ActionLink("Employee Information", "#", "#")</li>
+                        <li>@Html.ActionLink("Employee Previous and Current Pay Details", "#", "#")</li>
+                        <li>@Html.ActionLink("Employee Modification", "#", "#")</li>
+                        <li>@Html.ActionLink("Employee Edit", "#", "#")</li>
+                        <li>@Html.ActionLink("Promotion Details Edit", "#", "#")</li>
+                        <li>@Html.ActionLink("Change Password", "#", "#")</li>
+                        <li>@Html.ActionLink("Sr.No Entry", "#", "#")</li>
+                        <li>@Html.ActionLink("Contarct Extend Deatils", "#", "#")</li>
+                        <li>@Html.ActionLink("Probation Period Report", "#", "#")</li>
+                    </ul>
+
+                </li>*@
+
+                @*<li>@Html.ActionLink("Magasin", "Magasin", "Home")</li>*@
+
+                @* <li>@{Html.RenderAction("CartSummary", "Panier");}</li>*@
+
+
+@*            </ul>
+        </nav>
+        <br />
+
+    </div>
+    </header>*@
+
+@*<body >*@
+@*<section class="main-slider">
+    	
+        <div class="tp-banner-container">
+            <div class="tp-banner">*@
+               @* <ul>
+                	<li>*@
+                    @*<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/image-1.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">*@
+                   @* <img src="images/main-slider/image-.jpg" style="background-size:cover;" alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat"> *@
+                    
+                   @* <div class="tp-caption sfl sfb tp-resizeme"
+                    data-x="left" data-hoffset="15"
+                    data-y="center" data-voffset="-50"
+                    data-speed="1500"
+                    data-start="500"
+                    data-easing="easeOutExpo"
+                    data-splitin="none"
+                    data-splitout="none"
+                    data-elementdelay="0.01"
+                    data-endelementdelay="0.3"
+                    data-endspeed="1200"
+                    data-endeasing="Power4.easeIn"><h2><span class="theme_color"></span> <br></h2></div>
+                    
+                    <div class="tp-caption sfr sfb tp-resizeme"
+                    data-x="left" data-hoffset="15"
+                    data-y="center" data-voffset="40"
+                    data-speed="1500"
+                    data-start="500"
+                    data-easing="easeOutExpo"
+                    data-splitin="none"
+                    data-splitout="none"
+                    data-elementdelay="0.01"
+                    data-endelementdelay="0.3"
+                    data-endspeed="1200"
+                    data-endeasing="Power4.easeIn"><div class="text"></div></div>
+                    
+                    <div class="tp-caption sfl sfb tp-resizeme"
+                    data-x="left" data-hoffset="15"
+                    data-y="center" data-voffset="100"
+                    data-speed="1500"
+                    data-start="500"
+                    data-easing="easeOutExpo"
+                    data-splitin="none"
+                    data-splitout="none"
+                    data-elementdelay="0.01"
+                    data-endelementdelay="0.3"
+                    data-endspeed="1200"
+                    data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one"></a></div>
+                    
+                    <div class="tp-caption sfb sfb tp-resizeme"
+                    data-x="right" data-hoffset="-15"
+                    data-y="center" data-voffset="0"
+                    data-speed="1500"
+                    data-start="500"
+                    data-easing="easeOutExpo"
+                    data-splitin="none"
+                    data-splitout="none"
+                    data-elementdelay="0.01"
+                    data-endelementdelay="0.3"
+                    data-endspeed="1200"
+                    data-endeasing="Power4.easeIn"><figure class="content-image"></figure></div>*@
+<!--                    <img src="images/main-slider/content-image-1.png" alt="">-->
+                    
+                  @*  </li>
+                    </ul>*@
+                   @* </div>
+            </div>
+    </section>
+    </body>*@
+ 

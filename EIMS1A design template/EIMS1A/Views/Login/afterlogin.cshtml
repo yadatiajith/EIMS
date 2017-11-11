@@ -1,0 +1,13 @@
+﻿@model EIMS1A.Models.Login
+
+@{
+    ViewBag.Title = "afterlogin";
+}
+
+<h2>afterlogin</h2>
+@if (Session["username"] != null)
+{ 
+<text>
+Welcome @Session["username"].ToString();
+</text>
+}

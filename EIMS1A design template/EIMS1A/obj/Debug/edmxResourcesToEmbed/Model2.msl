@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EIMSDB1AModel1StoreContainer" CdmEntityContainer="EIMSDB1AEntities1">
+    <EntitySetMapping Name="users_master_1A">
+      <EntityTypeMapping TypeName="EIMSDB1AModel1.users_master_1A">
+        <MappingFragment StoreEntitySet="users_master_1A">
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="application_user" ColumnName="application_user" />
+          <ScalarProperty Name="application_user_type" ColumnName="application_user_type" />
+          <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+          <ScalarProperty Name="user_appl" ColumnName="user_appl" />
+          <ScalarProperty Name="Commitee" ColumnName="Commitee" />
+          <ScalarProperty Name="UserDesc" ColumnName="UserDesc" />
+          <ScalarProperty Name="Cyear" ColumnName="Cyear" />
+          <ScalarProperty Name="Dept" ColumnName="Dept" />
+          <ScalarProperty Name="TelePhone" ColumnName="TelePhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
