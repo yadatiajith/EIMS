@@ -1,0 +1,830 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    <!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <style>
+            /* bootstrap dropdown hover menu*/
+
+            body {
+                font-family: 'PT Sans', sans-serif;
+                font-size: 13px;
+                font-weight: 400;
+                color: #4f5d6e;
+                position: relative;
+            }
+
+            .body-wrap {
+                min-height: 700px;
+            }
+
+            .body-wrap {
+                position: relative;
+                z-index: 0;
+            }
+
+                .body-wrap:before,
+                .body-wrap:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: -1;
+                    height: 260px;
+                    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(26, 49, 95, 1)), color-stop(100%, rgba(26, 49, 95, 0)));
+                    background: linear-gradient(to bottom, rgba(26, 49, 95, 1) 0%, rgba(26, 49, 95, 0) 100%);
+                    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1a315f', endColorstr='#001a315f', GradientType=0);
+                }
+        </style>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>IISc</title>
+        <link rel="shortcut icon" href="~/assets/dist/img/ico/logo.gif" type="image/x-icon">
+        <link rel="apple-touch-icon" type="image/x-icon" href="~/assets/dist/img/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="~/assets/dist/img/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="~/assets/dist/img/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="~/assets/dist/img/ico/apple-touch-icon-144-precomposed.png">
+        <link href="~/assets/dist/css/base.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets/plugins/toastr/toastr.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets/plugins/emojionearea/emojionearea.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets/plugins/monthly/monthly.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets/plugins/amcharts/export.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets/dist/css/component_ui.min.css" rel="stylesheet" type="text/css" />
+        <link id="defaultTheme" href="~/assets/dist/css/skins/skin-dark-1.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets/dist/css/custom.css" rel="stylesheet" type="text/css" />
+
+        <!--[if lt IE 9]>
+                    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+                <![endif]-->
+
+
+        <link rel="stylesheet" href="~/assets/styles.css">
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        @*<script src="script.js"></script>*@
+
+    </head>
+    <body>
+
+        <div id="wrapper" class="wrapper animsition">
+
+            <nav class="navbar navbar-fixed-top">
+
+                <div class="logo" style="margin-top: -6px; padding-left: 25px; padding-bottom: -8px; background-color: #3e454c;">
+                    <a href="index-2.html">
+                        <img src="~/assets/Images/logo.gif" alt=""></a>
+                </div>
+
+
+
+
+                <!-- <div class=navbar-header> -->
+                <!-- <button type=button class=navbar-toggle data-toggle=collapse data-target=.navbar-collapse> -->
+                <!-- <span class=sr-only>Toggle navigation</span> -->
+                <!-- <i class=material-icons>apps</i> -->
+                <!-- </button> -->
+                <!-- <h3>Welcome user</h3> -->
+                <!-- <img src="assets/Images/logo.gif"   style="width:"100px"; height:"100px";" alt="" > -->
+
+                <!-- <div class=nav-container> -->
+
+                <!-- <ul class="nav navbar-nav hidden-xs"> -->
+                <!-- <li class="dropdown"> -->
+                <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">LTC/HTC <b class="caret"></b></a> -->
+                <!-- <ul class="dropdown-menu"> -->
+                <!-- <li><a href="#">LTC Details</a></li> -->
+                <!-- <li><a href="#">LTC Bill</a></li> -->
+                <!-- <li><a href="#">LTC|Medical Fecility Certificate </a></li> -->
+
+                <!-- </ul> -->
+                <!-- </li> -->
+                <!-- <li class="dropdown"> -->
+                <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Increments <b class="caret"></b></a> -->
+                <!-- <ul class="dropdown-menu"> -->
+                <!-- <li><a href="#">Process Current Month Increments</a></li> -->
+                <!-- <li><a href="#">Process Current Month Increment-P6</a></li> -->
+                <!-- <li><a href="#">Finalised Increments </a></li> -->
+                <!-- <li><a href="#">Pending Increments </a></li> -->
+                <!-- <li><a href="#">Process Status </a></li> -->
+                <!-- <li><a href="#">Reports </a></li> -->
+                <!-- </ul> -->
+                <!-- </li> -->
+                <!-- <li class="dropdown"> -->
+                <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pension<b class="caret"></b></a> -->
+                <!-- <ul class="dropdown-menu"> -->
+                <!-- <li><a href="#">Pension Entry</a></li> -->
+                <!-- <li><a href="#">Pension Calculation</a></li> -->
+                <!-- <li><a href="#">Pension Approve </a></li> -->
+                <!-- <li><a href="#">Pension Print</a></li> -->
+
+                <!-- </ul> -->
+                <!-- </li> -->
+                <!-- <li class="dropdown"> -->
+                <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Temporary Appointment<b class="caret"></b></a> -->
+                <!-- <ul class="dropdown-menu"> -->
+                <!-- <li><a href="#">Employee Registration</a></li> -->
+                <!-- <li><a href="#">Employee Letters</a></li> -->
+                <!-- <li><a href="#">Reports </a></li> -->
+
+
+                <!-- </ul> -->
+                <!-- </li> -->
+                <!-- <li><a href="">MBF</a></li> -->
+                <!-- <li><a href="">Exit</a></li> -->
+
+
+                <!-- </ul> -->
+
+
+
+
+                <!-- </div> -->
+            </nav>
+
+            <!-- Nav -->
+            <div class="sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+
+                        <!-- <li> -->
+                        <!-- <a href="#" class=material-ripple><i class=material-icons></i> Employee Info<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=charts_flot.html>Employee Information</a></li> -->
+                        <!-- <li><a href=charts_Js.html>Employee Previous And Current Details</a></li> -->
+                        <!-- <li><a href=charts_morris.html>Employee Modification</a></li> -->
+                        <!-- <li><a href="#" class=material-ripple><i class=material-icons></i> Employee Edit<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=charts_morris.html>Employee Name</a> -->
+                        <!-- </li> -->
+                        <!-- </ul></li> -->
+                        <!-- <li><a href=charts_morris.html>Payscale Modification</a></li> -->
+                        <!-- <li><a href=charts_morris.html>Promotion Details Edit</a></li> -->
+                        <!-- <li><a href=charts_morris.html>Change Password</a></li> -->
+                        <!-- <li><a href=charts_morris.html>SR.No Entry</a></li> -->
+                        <!-- <li><a href=charts_morris.html>Contract Extend Details</a></li> -->
+                        <!-- <li><a href=charts_morris.html>Probation Period Request</a></li> -->
+                        <!-- </ul> -->
+                        <!-- </li> -->
+
+                        <!-- <li> -->
+                        <!-- <a href="#" class=material-ripple><i class=material-icons></i> Recruitment<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+
+
+                        <!-- <li>  <a href="#" class=material-ripple><i class=material-icons></i> Advertisement<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=table.html>Rolling Advertisement</a></li> -->
+                        <!-- <li><a href=dataTables.html>Issue of Advertisement</a></li> -->
+
+                        <!-- </ul></li> -->
+                        <!-- <li> <a href="#" class=material-ripple><i class=material-icons></i> Recruitment Process<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+
+                        <!-- <li> <a href="#" class=material-ripple><i class=material-icons></i> Rolling Advertisement Process<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=table.html>Application Entry</a></li> -->
+                        <!-- <li><a href=dataTables.html>Guide Sheet</a></li> -->
+                        <!-- <li><a href=table.html>Selection Commite</a></li> -->
+                        <!-- <li><a href=dataTables.html>Members Inviting</a></li> -->
+                        <!-- <li><a href=table.html>Members List Letter</a></li> -->
+                        <!-- <li><a href=dataTables.html>Candidate Shortlist</a></li> -->
+                        <!-- <li><a href=table.html>Interview Letter</a></li> -->
+                        <!-- <li> <a href="#" class=material-ripple><i class=material-icons></i> Reports<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=table.html>Candidate List</a></li> -->
+                        <!-- <li><a href=dataTables.html>Candidate List Without Address</a></li> -->
+                        <!-- <li><a href=table.html>Attendance Sheet</a></li> -->
+                        <!-- <li><a href=table.html>Appointment Letter List</a></li> -->
+                        <!-- <li><a href=dataTables.html>Joined Case List</a></li> -->
+                        <!-- <li><a href=table.html>Declained Appointment List</a></li> -->
+                        <!-- <li><a href=table.html>SC/ST/OBC List</a></li> -->
+                        <!-- <li><a href=dataTables.html>Male-Female List</a></li> -->
+                        <!-- </ul></li> -->
+                        <!-- <li><a href=table.html>Agenda</a></li> -->
+                        <!-- <li><a href=dataTables.html>Appointment Letters</a></li> -->
+                        <!-- <li><a href=table.html>Joining Post/Memo Notification</a></li> -->
+                        <!-- <li><a href=dataTables.html>Probation/Extension</a></li> -->
+                        <!-- </ul> </li> -->
+                        <!-- <li> <a href="#" class=material-ripple><i class=material-icons></i> Issue of Advt. Process<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=table.html>Application Entry</a></li> -->
+                        <!-- <li><a href=dataTables.html>Guide Sheet</a></li> -->
+                        <!-- <li><a href=table.html>Selection Commite</a></li> -->
+                        <!-- <li><a href=dataTables.html>Members Inviting</a></li> -->
+                        <!-- <li><a href=table.html>Members List Letter</a></li> -->
+                        <!-- <li><a href=dataTables.html>Candidate Shortlist</a></li> -->
+                        <!-- <li><a href=table.html>Interview Letter</a></li> -->
+                        <!-- <li><a href=dataTables.html>Reports</a></li> -->
+                        <!-- <li><a href=table.html>Agenda</a></li> -->
+                        <!-- <li><a href=dataTables.html>Appointment Letters</a></li> -->
+                        <!-- <li><a href=table.html>Joining Post/Memo Notification</a></li> -->
+                        <!-- <li><a href=table.html>Probation/Extension</a></li> -->
+
+
+                        <!-- </ul></li> -->
+                        <!-- <li><a href=dataTables.html></a></li> -->
+                        <!-- <li><a href=dataTables.html>Issue of Advertisement Process</a></li> -->
+
+                        <!-- </ul> -->
+                        <!-- </li> -->
+
+
+                        <!-- </ul> -->
+
+
+                        <!-- </li> -->
+
+                        <!-- <li> -->
+                        <!-- <a href="#" class=material-ripple><i class=material-icons></i> Service Registry<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+
+                        <!-- <li><a href="#" class=material-ripple><i class=material-icons></i> New Employee Registration<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=dataTables.html>DOJ Memo</a></li> -->
+                        <!-- <li><a href=footable.html>DOJ Memo Verification</a></li> -->
+                        <!-- <li><a href=x-editable.html>Employee Verification</a></li> -->
+                        <!-- <li><a href=footable.html>New Employee Verification</a></li> -->
+                        <!-- </ul></li> -->
+                        <!-- <li><a href=dataTables.html>Employee status</a></li> -->
+                        <!-- <li><a href=footable.html>Service Register</a></li> -->
+                        <!-- <li><a href=x-editable.html>Seniority Setup List</a></li> -->
+                        <!-- <li><a href=footable.html>Dependent Details Add/Edit</a></li> -->
+                        <!-- <li><a href=x-editable.html>Change Personal Details</a></li> -->
+                        <!-- <li><a href=footable.html>Education Details</a></li> -->
+                        <!-- <li><a href=x-editable.html>Passport Application Form</a></li> -->
+                        <!-- <li><a href=x-editable.html>Service Application Form</a></li> -->
+                        <!-- <li><a href=x-editable.html>Pay Fixation</a></li> -->
+
+                        <!-- </ul> -->
+                        <!-- </li> -->
+
+                        <!-- <li> -->
+                        <!-- <a href="#" class=material-ripple><i class=material-icons></i> Leave<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=forms_basic.html>Leave Balance Entry</a></li> -->
+                        <!-- <li><a href=forms_validation.html>Leave Balance Edit</a></li> -->
+
+                        <!-- <li><a href="#" class=material-ripple><i class=material-icons></i> Child Care Leave<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=forms_basic.html>CCL Entry</a></li> -->
+                        <!-- <li><a href=forms_validation.html>CCL Request</a></li> -->
+                        <!-- <li><a href=forms_basic.html>CCL Process</a></li> -->
+                        <!-- <li><a href=forms_validation.html>CCL Reports</a></li> -->
+                        <!-- </ul> -->
+                        <!-- </li> -->
+                        <!-- <li><a href=form_file_upload.html>Bio Data</a></li> -->
+
+                        <!-- <li><a href="#" class=material-ripple><i class=material-icons></i>Leave Crediting<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=forms_basic.html>Vacaton Statments</a></li> -->
+                        <!-- <li><a href=forms_validation.html>Faculty/Scientific Staff</a></li> -->
+                        <!-- <li><a href=forms_basic.html>Non Faculty</a></li> -->
+                        <!-- <li><a href=forms_validation.html>View Vacation Availed</a></li> -->
+                        <!-- </ul> -->
+                        <!-- </li> -->
+                        <!-- <li><a href="#" class=material-ripple><i class=material-icons></i>Leave Debit<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=forms_basic.html>Leave Request</a></li> -->
+                        <!-- <li><a href=forms_validation.html>Leave Process</a></li> -->
+
+                        <!-- </ul> -->
+                        <!-- </li> -->
+                        <!-- <li><a href="#" class=material-ripple><i class=material-icons></i>Visit Abroad Request<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=forms_basic.html>Request</a></li> -->
+                        <!-- <li><a href=forms_validation.html>Leave Process</a></li> -->
+                        <!-- <li><a href=forms_validation.html>Processed Leave</a></li> -->
+                        <!-- <li><a href=forms_validation.html>Leave Process</a></li> -->
+                        <!-- <li><a href=forms_validation.html>Approved Issues</a></li> -->
+
+                        <!-- </ul> -->
+                        <!-- </li> -->
+
+                        <!-- <li><a href=forms_basic.html>Modifiy Visit Abroad</a></li> -->
+                        <!-- <li><a href=forms_validation.html>Reports</a></li> -->
+                        <!-- <li><a href=forms_validation.html>Holiday List Entry</a></li> -->
+                        <!-- </ul> -->
+                        <!-- </li> -->
+
+                        <!-- <li> -->
+                        <!-- <a href="#" class=material-ripple><i class=material-icons></i> Promotion<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+
+                        <!-- <li> -->
+                        <!-- <a href="#" class=material-ripple><i class=material-icons></i> New Process<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+
+                        <!-- <li> <a href="#" class=material-ripple><i class=material-icons></i> Evaluation<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li> <a href="#" class=material-ripple><i class=material-icons></i> Academic<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=timeline.html>Asst.Prof-Assoc.Prof</a></li> -->
+                        <!-- <li><a href=timeline.html>Assoc.Prof-Professor</a></li> -->
+                        <!-- </ul> -->
+                        <!-- </li> -->
+                        <!-- <li> <a href="#" class=material-ripple><i class=material-icons></i> Scientific<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=timeline.html>SOII-SOI</a></li> -->
+                        <!-- <li><a href=timeline.html>SOI-SSO</a></li> -->
+                        <!-- <li><a href=timeline.html>SSO-PRS</a></li> -->
+                        <!-- </ul> -->
+                        <!-- </li> -->
+                        <!-- <li> <a href="#" class=material-ripple><i class=material-icons></i> Technical<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=timeline.html>TOI-TOII</a></li> -->
+                        <!-- <li><a href=timeline.html>TOII-TOIII</a></li> -->
+
+                        <!-- </ul> -->
+                        <!-- </li> -->
+                        <!-- </ul> -->
+                        <!-- <li> <a href="#" class=material-ripple><i class=material-icons></i> Report after Terminal scale<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li> <a href="#" class=material-ripple><i class=material-icons></i> Academic<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=timeline.html>Professor</a></li> -->
+
+                        <!-- </ul> -->
+                        <!-- </li> -->
+                        <!-- <li> <a href="#" class=material-ripple><i class=material-icons></i> Scientific<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=timeline.html>SOII</a></li> -->
+                        <!-- <li><a href=timeline.html>PRS</a></li> -->
+
+                        <!-- </ul> -->
+                        <!-- </li> -->
+                        <!-- <li> <a href="#" class=material-ripple><i class=material-icons></i> Technical<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=timeline.html>TOII</a></li> -->
+
+                        <!-- </ul> -->
+                        <!-- </li> -->
+                        <!-- </ul> -->
+                        <!-- <!-- <a href="#" class=material-ripple><i class=material-icons>insert_emoticon</i> Contract Renewal<span class="fa arrow"></span></a> </li> -->
+                        <!-- <li><a href=timeline.html>Contract Renewal</a></li> -->
+                        <!-- <li><a href=timeline.html>PB4 renewal</a></li> -->
+                        <!-- </ul> -->
+
+                        <!-- </li> -->
+
+
+                        <!-- <li> -->
+                        <!-- <a href="#" class=material-ripple><i class=material-icons></i> Under Process<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+
+                        <!-- <li><a href="#" class=material-ripple><i class=material-icons></i> Evaluation<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=timeline.html>Academic</a></li>  -->
+                        <!-- <li><a href=timeline.html>Scientific</a></li>  -->
+                        <!-- <li><a href=timeline.html>Technical</a></li>  -->
+                        <!-- <li><a href=timeline.html>Officers</a></li>  -->
+                        <!-- </ul></li> -->
+                        <!-- <li><a href="#" class=material-ripple><i class=material-icons></i> Report after terminal Scale<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=timeline.html>Academic</a></li>  -->
+                        <!-- <li><a href=timeline.html>Scientific</a></li>  -->
+                        <!-- <li><a href=timeline.html>Technical</a></li>  -->
+
+                        <!-- </ul> -->
+                        <!-- </li> -->
+                        <!-- <li><a href=timeline.html>Contract Renewal</a></li>  -->
+                        <!-- </ul> -->
+                        <!-- </li> -->
+                        <!-- <li> -->
+                        <!-- <a href="#" class=material-ripple><i class=material-icons></i> Refree List<span class="fa arrow"></span></a> -->
+                        <!-- <ul class="nav nav-second-level"> -->
+                        <!-- <li><a href=timeline.html>ALL</a></li> -->
+
+                        <!-- </ul> -->
+                        <!-- </li> -->
+                        <!-- <li><a href=timeline.html>Promotion Entry</a></li>  -->
+                        <!-- <!-- <li><a href=timeline.html>PB4 renewal</a></li> -->
+                        <!-- </ul> -->
+                        <!-- </li> -->
+
+                        <div id='cssmenu'>
+                            <ul>
+                                <li class='active has-sub'><a href='#'><span>Employee Info</span></a>
+
+                                    <ul>
+                                        <li><a href='#'><span style="width: 25px;">Employee Information</span></a></li>
+                                        <li><a href='#'><span>Employee Previous and Current Details</span></a></li>
+                                        <li><a href='#'><span>Employee Modification</span></a></li>
+                                        <li class='active has-sub'><a href='#'><span>Employee Edit</span></a>
+                                            <ul>
+                                                <li><a href='#'><span>Employee Name</span></a>
+
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a href='#'><span>Payscale Modification</span></a></li>
+                                        <li><a href='#'><span>Promotion Details Edit</span></a></li>
+                                        <li><a href='#'><span>Change Password</span></a></li>
+                                        <li><a href='#'><span>SR.NO Entry</span></a></li>
+                                        <li><a href='#'><span>Contract Extend Details</span></a></li>
+                                        <li><a href='#'><span>Probation Period Report</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class='active has-sub'><a href='#'><span>Recruitment</span></a>
+                                    <ul>
+                                        <li class='active has-sub'><a href='#'><span>Advertisement</span></a>
+                                            <ul>
+                                                <li><a href='#'><span>Rolling Advertisement</span></a></li>
+                                                <li class='last'><a href='#'><span>Issue of Advertisement</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class='active has-sub'><a href='#'><span>Recruitment Process</span></a>
+                                            <ul>
+                                                <li class='active has-sub'><a href='#'><span>Rolling Advertisement Process</span></a>
+                                                    <ul>
+                                                        <li><a href='#'><span>Application Entry</span></a></li>
+                                                        <li class='last'><a href='#'><span>Guide Sheet</span></a></li>
+                                                        <li class='last'><a href='#'><span>Selection Committee</span></a></li>
+                                                        <li class='last'><a href='#'><span>Members Inviting</span></a></li>
+                                                        <li class='last'><a href='#'><span>Members List Letter</span></a></li>
+                                                        <li class='last'><a href='#'><span>Candidate Shortlist</span></a></li>
+                                                        <li class='last'><a href='#'><span>Interview Letter</span></a></li>
+                                                        <li class='active has-sub'><a href='#'><span>Reports</span></a>
+                                                            <ul>
+                                                                <li><a href='#'><span>Candidate List</span></a></li>
+                                                                <li class='last'><a href='#'><span>Candidate List-Without Address</span></a></li>
+                                                                <li><a href='#'><span>Attendance Sheet</span></a></li>
+                                                                <li><a href='#'><span>Appointment Letter List</span></a></li>
+                                                                <li><a href='#'><span>Joined Case List</span></a></li>
+                                                                <li><a href='#'><span>Declained Appointment List</span></a></li>
+                                                                <li><a href='#'><span>SC/ST/OBC List</span></a></li>
+                                                                <li><a href='#'><span>Male-Female List</span></a></li>
+                                                            </ul>
+
+                                                        </li>
+                                                        <li class='last'><a href='#'><span>Agenda</span></a></li>
+                                                        <li class='last'><a href='#'><span>Appointment Letters</span></a></li>
+                                                        <li class='last'><a href='#'><span>Joining Post/Memo Notification</span></a></li>
+                                                        <li class='last'><a href='#'><span>Probation/Extension</span></a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class='active has-sub'><a href='#'><span>Issue Advertisement Process</span></a>
+                                                    <ul>
+                                                        <li><a href='#'><span>Application Entry</span></a></li>
+                                                        <li><a href='#'><span>Guide Sheet</span></a></li>
+                                                        <li><a href='#'><span>Selection Committee</span></a></li>
+                                                        <li><a href='#'><span>Members Inviting</span></a></li>
+                                                        <li><a href='#'><span>Members List Letter</span></a></li>
+                                                        <li><a href='#'><span>Candidate Shortlist</span></a></li>
+                                                        <li><a href='#'><span>Interview Letter</span></a></li>
+                                                        <li><a href='#'><span>Reports</span></a></li>
+                                                        <li><a href='#'><span>Agenda</span></a></li>
+                                                        <li><a href='#'><span>Appointment Letter</span></a></li>
+                                                        <li><a href='#'><span>Joining Post/Memo Notification</span></a></li>
+                                                        <li><a href='#'><span>Probation/Extension</span></a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class='last'><a href='#'><span>Issue of Advertisement Process</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class='active has-sub'><a href='#'><span>Service Registry</span></a>
+
+                                    <ul>
+                                        <li class='active has-sub'><a href='#'><span style="width: 25px;">New Employee Registration</span></a>
+
+                                            <ul>
+                                                <li><a href='#'><span>DOJ Memo</span></a></li>
+                                                <li><a href='#'><span>New Employee Registration</span></a></li>
+                                                <li><a href='#'><span>DOJ Employee Verification</span></a></li>
+                                                <li><a href='#'><span>Employee Verification</span></a></li>
+
+
+                                            </ul>
+
+                                        </li>
+                                        <li><a href='#'><span>Employee Status</span></a></li>
+                                        <li><a href='#'><span>Service Register</span></a></li>
+                                        <li><a href='#'><span>Seniority Step Up List</span></a></li>
+                                        <li><a href='#'><span>Dependent Details Add/Edit</span></a></li>
+                                        <li><a href='#'><span>Change Personal Details</span></a></li>
+                                        <li><a href='#'><span>Education Details</span></a></li>
+                                        <li><a href='#'><span>Passport Application Form</span></a></li>
+                                        <li><a href='#'><span>Service	Application Form</span></a></li>
+                                        <li><a href='#'><span>Pay Fixation</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class='active has-sub'><a href='#'><span>Leave</span></a>
+
+                                    <ul>
+                                        <li><a href='#'><span>Leave Balance Entry</span></a></li>
+                                        <li><a href='#'><span>Leave Balance Edit</span></a></li>
+                                        <li class='active has-sub'><a href='#'><span style="width: 25px;">Child Care Leave</span></a>
+
+                                            <ul>
+                                                <li><a href='#'><span>CCL Entry</span></a></li>
+                                                <li><a href='#'><span>CCL Request</span></a></li>
+                                                <li><a href='#'><span>CCL Process</span></a></li>
+                                                <li><a href='#'><span>CCL Report</span></a></li>
+
+
+                                            </ul>
+
+                                        </li>
+                                        <li><a href='#'><span>Bio Data</span></a></li>
+                                        <li class='active has-sub'><a href='#'><span>Leave Crediting</span></a>
+                                            <ul>
+                                                <li><a href='#'><span>Vacation Statments</span></a></li>
+                                                <li><a href='#'><span>Faculty/Scientific Staff</span></a></li>
+                                                <li><a href='#'><span>Non Faculty</span></a></li>
+                                                <li><a href='#'><span>View Vacation Availed</span></a></li>
+
+
+                                            </ul>
+
+                                        </li>
+                                        <li class='active has-sub'><a href='#'><span>Leave Debit</span></a>
+
+                                            <ul>
+                                                <li><a href='#'><span>Leave Request</span></a></li>
+                                                <li><a href='#'><span>Leave Process</span></a></li>
+
+
+
+                                            </ul>
+
+                                        </li>
+                                        <li class='active has-sub'><a href='#'><span>Visit Abroad Request</span></a>
+
+
+
+                                            <ul>
+                                                <li><a href='#'><span>Request</span></a></li>
+                                                <li><a href='#'><span>Leave Process</span></a></li>
+
+                                                <li><a href='#'><span>Processed Leave</span></a></li>
+                                                <li><a href='#'><span>Approved Issues</span></a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a href='#'><span>Modifiy Visit Abroad</span></a></li>
+                                        <li><a href='#'><span>Reports</span></a></li>
+                                        <li><a href='#'><span>Holiday List Entry</span></a></li>
+
+                                    </ul>
+                                </li>
+                                <li class='active has-sub'><a href='#'><span>Promotion</span></a>
+
+
+
+                                    <ul>
+                                        <li class='active has-sub'><a href='#'><span>New Process</span></a>
+                                            <ul>
+                                                <li class='active has-sub'><a href='#'><span>Evaluation</span></a>
+                                                    <ul>
+                                                        <li class='active has-sub'><a href='#'><span>Academic</span></a>
+                                                            <ul>
+                                                                <li><a href='#'><span>Asst.Prof-Assoc.Prof</span></a></li>
+                                                                <li><a href='#'><span>Assoc.Prof-Professor</span></a></li>
+                                                            </ul>
+
+
+                                                        </li>
+                                                        <li class='active has-sub'><a href='#'><span>Scientific</span></a>
+                                                            <ul>
+                                                                <li><a href="#">SOII-SOI</a></li>
+                                                                <li><a href="#">SOI-SSO</a></li>
+                                                                <li><a href="#">SSO-PRS</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class='active has-sub'><a href='#'><span>Technical</span></a>
+                                                            <ul>
+                                                                <li><a href="#">TOI-TOII</a></li>
+                                                                <li><a href="#">TOII-TOIII</a></li>
+                                                            </ul>
+
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class='active has-sub'><a href='#'><span>Report After Terminal Scale</span></a>
+                                                    <ul>
+
+                                                        <li class='active has-sub'><a href='#'><span>Academic</span></a>
+
+                                                            <ul>
+
+                                                                <li><a href="#">Professor</a></li>
+                                                            </ul>
+
+                                                        </li>
+                                                        <li class='active has-sub'><a href='#'><span>Scientific</span></a>
+                                                            <ul>
+                                                                <li><a href="#">SOII</a></li>
+                                                                <li><a href="#">PRS</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class='active has-sub'><a href='#'><span>Technical</span></a>
+                                                            <ul>
+                                                                <li><a href="#">TOII</a></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+
+
+                                                </li>
+                                                <li><a href='#'><span>Contact Renewal</span></a></li>
+                                                <li><a href='#'><span>PB4 Renewal</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li class='active has-sub'><a href='#'><span>Under Process</span></a>
+                                            <ul>
+                                                <li class='active has-sub'><a href='#'><span>Evaluation</span></a>
+                                                    <ul>
+
+                                                        <li><a href="#">Academic</a></li>
+                                                        <li><a href="#">Scientific</a></li>
+                                                        <li><a href="#">Technical</a></li>
+                                                        <li><a href="#">Officers</a></li>
+                                                    </ul>
+
+
+                                                </li>
+                                                <li class='active has-sub'><a href='#'><span>Report After Terminal Scale</span></a>
+                                                    <ul>
+                                                        <li><a href="#">Academic</a></li>
+                                                        <li><a href="#">Scientific</a></li>
+                                                        <li><a href="#">Technical</a></li>
+
+                                                    </ul>
+
+                                                </li>
+                                                <li><a href='#'><span>Contract Renewal</span></a></li>
+                                            </ul>
+
+                                        </li>
+
+                                        <li class='active has-sub'><a href='#'><span>Refree List</span></a>
+                                            <ul>
+                                                <li><a href='#'><span>ALL</span></a></li>
+
+                                            </ul>
+
+                                        </li>
+                                        <li><a href='#'><span>Promotion Entry</span></a></li>
+
+                                    </ul>
+                                </li>
+                                <li class='active has-sub'><a href='#'><span>Retirement</span></a>
+
+                                    <ul>
+                                        <li><a href="#"><span>Modification</span></a></li>
+                                        <li class='active has-sub'><a href='#'><span>Retirement</span></a>
+                                            <ul>
+                                                <li><a href='#'><span>Letter to teaching Staff</span></a></li>
+                                                <li><a href='#'><span>Office Order to Director</span></a></li>
+                                                <li><a href='#'><span>Letters</span></a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a href='#'><span>Voluntary Retirement</span></a></li>
+                                        <li><a href='#'><span>Resignation</span></a></li>
+                                        <li><a href='#'><span>Death</span></a></li>
+
+                                    </ul>
+                                </li>
+                                <li class='active has-sub'><a href='#'><span>Pension</span></a>
+
+                                    <ul>
+                                        <li><a href="#"><span>Pension Entry</span></a></li>
+                                        <li><a href='#'><span>Pension Calculation</span></a></li>
+                                        <li><a href='#'><span>Pension Approve</span></a></li>
+                                        <li><a href='#'><span>Pension Print</span></a></li>
+
+                                    </ul>
+                                </li>
+                                <li class='active has-sub'><a href='#'><span>Temporary Appointment</span></a>
+
+                                    <ul>
+                                        <li><a href="#"><span>Employee Registration</span></a></li>
+                                        <li><a href='#'><span>Employee Letters</span></a></li>
+                                        <li><a href='#'><span>Reports</span></a></li>
+
+
+                                    </ul>
+                                </li>
+                                <li class='active has-sub'><a href='#'><span>Increments</span></a>
+
+                                    <ul>
+                                        <li><a href="#"><span>Process Current Month Increment</span></a></li>
+                                        <li><a href='#'><span>Process Current Month Increment-P6</span></a></li>
+                                        <li><a href='#'><span>Finalised Increment</span></a></li>
+                                        <li><a href='#'><span>Pending Increments</span></a></li>
+                                        <li><a href='#'><span>Process Status</span></a></li>
+                                        <li><a href="#"><span>Reports</span></a></li>
+
+
+
+                                    </ul>
+                                </li>
+                                <li class='active has-sub'><a href='#'><span>LTC/HTC</span></a>
+
+                                    <ul>
+                                        <li><a href="#"><span>LTC Details</span></a></li>
+                                        <li><a href='#'><span>LTC Bill</span></a></li>
+                                        <li><a href='#'><span>LTC/Medical Fecility Certificate</span></a></li>
+
+
+                                    </ul>
+                                </li>
+
+                                <li><a href='#'><span>MBF</span></a></li>
+                                <li><a href='#'><span>Dynamic Report</span></a></li>
+                                <li><a href='#'><span>User Maintainence</span></a></li>
+                                <li><a href='#'><span>Variance Report</span></a></li>
+                                <li><a href='#'><span>Reports</span></a></li>
+                                <li><a href='#'><span>Exit</span></a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Nav -->
+
+            <div class="control-sidebar-bg">  </div>
+           
+            <div id="page-wrapper">
+               
+                <div class="content">
+
+                   
+                    <div class="row" style="margin-right: -145px; margin-left: -300px;">
+
+                        <img src="~/assets/Images/image-12.jpg" style="width: 100%; margin-top: 20px; background-size: cover; margin: 26px 0px -12px -113px;">
+
+                       @RenderBody()
+
+                        @* <div id="body">
+                            @RenderBody() 
+                        </div>*@
+
+                    </div>
+
+
+                </div>
+               
+            </div>
+            
+        
+
+        </div>
+       
+        <footer class="main-footer" style="padding: 5px;">
+            <div class="container">
+                <div class="pull-right hidden-xs"><b>Version</b> 1.0</div>
+                <strong>Copyright &copy;IISc| Design and Developed By &nbsp
+				
+                    <a href="http://www.taurusonline.net">THSSPL</a>.</strong>
+
+            </div>
+
+        </footer>
+        <!-- /. footer -->
+         @* @Scripts.Render("~/bundles/jquery")
+ @RenderSection("scripts", required: false)*@
+        <script src="~/assets/plugins/jQuery/jquery-1.12.4.min.js"></script>
+        <script src="~/assets/plugins/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+        <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/assets/plugins/metisMenu/metisMenu.min.js"></script>
+        <script src="~/assets/plugins/lobipanel/lobipanel.min.js"></script>
+        <script src="~/assets/plugins/animsition/js/animsition.min.js"></script>
+        <script src="~/assets/plugins/fastclick/fastclick.min.js"></script>
+        <script src="~/assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+
+        <script src="~/assets/plugins/sparkline/sparkline.min.js"></script>
+        <script src="~/assets/plugins/counterup/jquery.counterup.min.js"></script>
+        <script src="~/assets/plugins/counterup/waypoints.js"></script>
+        <script src="~/assets/plugins/emojionearea/emojionearea.min.js"></script>
+        <script src="~/assets/plugins/monthly/monthly.min.js"></script>
+        <script src="~/assets/plugins/amcharts/amcharts.js"></script>
+        <script src="~/assets/plugins/amcharts/ammap.js"></script>
+        <script src="~/assets/plugins/amcharts/worldLow.js"></script>
+        <script src="~/assets/plugins/amcharts/serial.js"></script>
+        <script src="~/assets/plugins/amcharts/export.min.js"></script>
+        <script src="~/assets/plugins/amcharts/light.js"></script>
+        <script src="~/assets/plugins/amcharts/pie.js"></script>
+        <script src="~/assets/dist/js/app.min.js"></script>
+        <script src="~/assets/dist/js/page/dashboard.min.js"></script>
+        <script src="~/assets/dist/js/jQuery.style.switcher.min.js"></script>
+   
+   
+</body>
+</html>

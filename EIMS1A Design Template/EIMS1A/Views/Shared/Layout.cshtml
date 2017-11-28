@@ -1,0 +1,42 @@
+﻿@*@{
+    ViewBag.Title = "Layout";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}*@
+
+@*<h2>Layout</h2>*@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Code Express</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site.css")" />
+    @Styles.Render("~/assets/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/style.css")
+
+
+</head>
+<body>
+    <header>
+            <div class="content-wrapper">
+                @Html.Partial("_Header")
+            </div>
+        </header>
+    <div id="body" style="margin-left:50px;">
+       @* @RenderSection("featured", required: false)*@
+        <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+    </div>
+    <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                   @Html.Partial("_Footer")
+                </div>
+            </div>
+        </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required:false)
+</body>
+</html>
